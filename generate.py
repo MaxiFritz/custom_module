@@ -97,6 +97,7 @@ html += """
 </body>
 </html>
 """
+html += f"<!-- Generated at {datetime.utcnow()} UTC -->\n"
 
 with open("index.html", "w") as f:
     f.write(html)
