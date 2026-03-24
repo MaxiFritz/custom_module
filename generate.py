@@ -72,7 +72,8 @@ for city, zone in zones.items():
 # Add DST info
 if global_next_change:
     formatted = global_next_change.strftime("%Y-%m-%d %H:%M")
-    delta = global_next_change - datetime.now()
+    now_local = datetime.now(global_next_change.tzinfo)
+    delta = global_next_change - now_local
     delta_days = delta.days
     html += f"""
     <h2>Next Time Change</h2>
