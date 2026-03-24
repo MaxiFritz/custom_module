@@ -72,10 +72,12 @@ for city, zone in zones.items():
 # Add DST info
 if global_next_change:
     formatted = global_next_change.strftime("%Y-%m-%d %H:%M")
+    delta = datetime.now - global_next_change
+    delta_days = delta..strftime("%d")
     html += f"""
     <h2>Next Time Change</h2>
     <div class="sub">
-        The next worldwide DST change occurs in <strong>{global_next_zone}</strong> on <strong>{formatted}</strong>.
+        The next worldwide DST change occurs in <strong>{global_next_zone}</strong> on <strong>{formatted}</strong> in {delta_days} days.
     </div>
     """
 else:
