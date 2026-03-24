@@ -52,9 +52,7 @@ h1 { margin-bottom: 20px; }
 }
 </style>
 </head>
-<body>
-<h1>Current Time</h1>
-"""
+<body>"""
 
 # Track earliest DST change worldwide
 global_next_change = None
@@ -70,13 +68,6 @@ for city, zone in zones.items():
     if change and (global_next_change is None or change < global_next_change):
         global_next_change = change
         global_next_zone = city
-
-    html += f"""
-    <div class="row">
-        <div><strong>{city}</strong></div>
-        <div>{now}</div>
-    </div>
-    """
 
 # Add DST info
 if global_next_change:
