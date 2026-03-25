@@ -53,9 +53,8 @@ def page_dst_change():
 
         html += f"""
         <div>
-            Next DST change: <strong>{global_next_zone}</strong><br>
+            Next DST change: <strong>{global_next_zone}</strong> in {delta_days} days.
             Date: <strong>{formatted}</strong><br>
-            In {delta_days} days.
         </div>
         """
     else:
