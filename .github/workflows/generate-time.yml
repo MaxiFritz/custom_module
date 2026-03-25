@@ -1,4 +1,4 @@
-name: Generate Time Page
+name: Generate Modules Pages
 
 on:
   schedule:
