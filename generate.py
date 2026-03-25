@@ -76,14 +76,12 @@ if global_next_change:
     delta = global_next_change - now_local
     delta_days = delta.days
     html += f"""
-    <h2>Next Time Change</h2>
     <div class="sub">
         The next worldwide DST change occurs in <strong>{global_next_zone}</strong> on <strong>{formatted}</strong> in {delta_days} days.
     </div>
     """
 else:
     html += """
-    <h2>Next Time Change</h2>
     <div class="sub">No DST changes detected in the next year.</div>
     """
 
