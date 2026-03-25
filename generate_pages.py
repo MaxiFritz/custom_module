@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 import pytz
-import datasource
-
+from datasource import EVENTS, zones
 # -----------------------------
 #  MODULES
 # -----------------------------
