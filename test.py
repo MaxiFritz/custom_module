@@ -156,5 +156,5 @@ def build(page_name):
 
 if __name__ == "__main__":
     # Change this to generate a different page
-    build("index")
+    build("dst_change")
     build("countdown")
