@@ -69,9 +69,10 @@ def page_dst_change():
 # -----------------------------
 
 EVENTS = [
-    ("WC 2026", "2026-06-11"),
-    ("Rugby League World Cup", "2026-10-01"),
-    ("2028 Summer Olympics", "2028-07-14")
+    ("World Cup", "2026-06-11"),
+    ("Rugby League WC", "2026-10-15"),
+    ("YOG Dakar", "2026-10-31"),
+    ("Summer Olympics", "2028-07-14")
 ]
 
 def page_event_countdown():
