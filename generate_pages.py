@@ -85,9 +85,9 @@ def page_event_countdown():
             <div style="
                 width: 50px;
                 height: 50px;
-                background: #f2f2f2;
-                border: 2px solid #ccc;
-                border-radius: 6px;
+                background: #fcfcfc;
+                border: 1px solid #aab8c6;
+                border-radius: 5px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
