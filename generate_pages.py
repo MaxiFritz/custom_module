@@ -1,18 +1,10 @@
 from datetime import datetime, timedelta
 import pytz
+import datasource
 
 # -----------------------------
 #  MODULES
 # -----------------------------
-
-zones = {
-    "Los Angeles": "America/Los_Angeles",
-    "New York": "America/New_York",
-    "Liège": "Europe/Brussels",
-    "Doha": "Asia/Qatar",
-    "Hong Kong": "Asia/Hong_Kong",
-    "Sydney": "Australia/Sydney"
-}
 
 def next_dst_change(tz):
     now = datetime.now(tz)
