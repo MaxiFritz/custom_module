@@ -32,5 +32,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add index.html
+          git add dst_change.html
+          git add countdown.html
           git commit -m "Update time" || echo "No changes to commit"
           git push
