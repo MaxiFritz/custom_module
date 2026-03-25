@@ -58,14 +58,6 @@ def page_dst_change():
 #  PAGE 2: EVENT COUNTDOWN
 # -----------------------------
 
-EVENTS = [
-    ("World Cup", "2026-06-11"),
-    ("Rugby League WC", "2026-10-15"),
-    ("YOG Dakar", "2026-10-31"),
-    ("NAB", "2026-04-18"),
-    ("Summer Olympics", "2028-07-14")
-]
-
 def page_event_countdown():
     now = datetime.now().date()
     upcoming = []
@@ -83,7 +75,7 @@ def page_event_countdown():
         return "<div>No upcoming events.</div>"
 
     # Build horizontal layout
-    html = '<div style="display: flex; gap: 25px; align-items: center;">'
+    html = '<div style="display: flex; gap: 25px; align-items: center; justify-content:center">'
 
     for name, date in upcoming:
         delta_days = (date - now).days
