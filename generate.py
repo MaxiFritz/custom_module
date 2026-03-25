@@ -37,7 +37,11 @@ html = """
 <meta charset="UTF-8">
 <title>World Clock</title>
 <style>
-body { font-family: Arial; padding: 40px; background: none; color: #172b4d; }
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body { font-family: Arial; background: none; color: #172b4d; }
 h1 { margin-bottom: 20px; }
 .row {
     display: flex;
@@ -89,7 +93,5 @@ html += """
 </body>
 </html>
 """
-html += f"<!-- Generated at {datetime.utcnow()} UTC -->\n"
-
 with open("index.html", "w") as f:
     f.write(html)
