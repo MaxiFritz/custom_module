@@ -53,8 +53,8 @@ def page_dst_change():
 
         html += f"""
         <div>
-            Next DST change: <strong>{global_next_zone}</strong> in {delta_days} days.
-            Date: <strong>{formatted}</strong><br>
+            Next DST change: <strong>{global_next_zone}</strong> in {delta_days} days.<br>
+            Date: <strong>{formatted}</strong>
         </div>
         """
     else:
@@ -73,40 +73,54 @@ EVENTS = [
     ("YOG Dakar", "2026-10-31"),
     ("Summer Olympics", "2028-07-14")
 ]
-def page_event_countdown():
-    html = ""
 
+def page_event_countdown():
     now = datetime.now()
+    upcoming = []
 
     # Convert and filter upcoming events
-    upcoming = []
     for name, date_str in EVENTS:
         event_date = datetime.strptime(date_str, "%Y-%m-%d")
         if event_date > now:
             upcoming.append((name, event_date))
 
-    # Sort by date
-    upcoming.sort(key=lambda e: e[1])
-
-    # Keep only the next 2
-    upcoming = upcoming[:2]
+    # Sort and keep next 3
+    upcoming = sorted(upcoming, key=lambda e: e[1])[:3]
 
     if not upcoming:
         return "<div>No upcoming events.</div>"
 
-    # Build HTML
+    # Build horizontal layout
+    html = '<div style="display: flex; gap: 25px; align-items: center;">'
+
     for name, date in upcoming:
         delta_days = (date - now).days
+
         html += f"""
-        <div style="margin-bottom: 15px;">
-            <strong>{name}</strong><br>
-            Date: {date.strftime("%Y-%m-%d")}<br>
-            In {delta_days} days.
+        <div style="display: flex; align-items: center;">
+            <div style="
+                width: 50px;
+                height: 50px;
+                background: #f2f2f2;
+                border: 2px solid #ccc;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                font-weight: bold;
+                margin-right: 10px;
+            ">
+                {delta_days}
+            </div>
+            <div style="white-space: nowrap;">
+                {name}
+            </div>
         </div>
         """
 
+    html += "</div>"
     return html
-
 
 
 # -----------------------------
