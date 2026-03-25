@@ -33,7 +33,7 @@ def next_dst_change(tz):
 # -----------------------------
 
 def page_dst_change():
-    html = "<h1>DST Change</h1>"
+    html = ""
 
     global_next_change = None
     global_next_zone = None
@@ -75,7 +75,7 @@ EVENTS = [
 ]
 
 def page_event_countdown():
-    html = "<h1>Next Event Countdown</h1>"
+    html = ""
 
     now = datetime.now()
     next_event = None
