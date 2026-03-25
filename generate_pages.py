@@ -113,6 +113,32 @@ PAGES = {
     "countdown": page_event_countdown,
 }
 
+# -----------------------------
+#  INDEX PAGE REGISTERY
+# -----------------------------
+
+def build_homepage():
+    links = []
+
+    for page_name in PAGES.keys():
+        filename = f"{page_name}.html"
+        title = page_name.replace("_", " ").title()
+        links.append(f'<li><a href="{filename}">{title}</a></li>')
+
+    content = f"""
+    <h1>Available Pages</h1>
+    <ul>
+        {''.join(links)}
+    </ul>
+    """
+
+    html = render_page(content, title="Home")
+
+    with open("index.html", "w") as f:
+        f.write(html)
+
+    print("Generated index.html with links to all pages")
+
 
 # -----------------------------
 #  MAIN GENERATOR
@@ -155,6 +181,10 @@ def build(page_name):
 # -----------------------------
 
 if __name__ == "__main__":
-    # Change this to generate a different page
-    build("dst_change")
-    build("countdown")
+    # Automatically build every page defined in PAGES
+    for page_name in PAGES.keys():
+        build(page_name)
+
+    # Build homepage linking to all pages
+    build_homepage()
+
