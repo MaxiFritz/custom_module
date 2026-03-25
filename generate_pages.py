@@ -74,35 +74,40 @@ EVENTS = [
     ("YOG Dakar", "2026-10-31"),
     ("Summer Olympics", "2028-07-14")
 ]
-
 def page_event_countdown():
     html = ""
 
     now = datetime.now()
-    next_event = None
-    next_delta = None
 
+    # Convert and filter upcoming events
+    upcoming = []
     for name, date_str in EVENTS:
         event_date = datetime.strptime(date_str, "%Y-%m-%d")
         if event_date > now:
-            delta = event_date - now
-            if next_delta is None or delta < next_delta:
-                next_delta = delta
-                next_event = (name, event_date)
+            upcoming.append((name, event_date))
 
-    if next_event:
-        name, date = next_event
+    # Sort by date
+    upcoming.sort(key=lambda e: e[1])
+
+    # Keep only the next 2
+    upcoming = upcoming[:2]
+
+    if not upcoming:
+        return "<div>No upcoming events.</div>"
+
+    # Build HTML
+    for name, date in upcoming:
+        delta_days = (date - now).days
         html += f"""
-        <div>
-            Next event: <strong>{name}</strong><br>
-            Date: <strong>{date.strftime("%Y-%m-%d")}</strong><br>
-            In {next_delta.days} days.
+        <div style="margin-bottom: 15px;">
+            <strong>{name}</strong><br>
+            Date: {date.strftime("%Y-%m-%d")}<br>
+            In {delta_days} days.
         </div>
         """
-    else:
-        html += "<div>No upcoming events.</div>"
 
     return html
+
 
 
 # -----------------------------
