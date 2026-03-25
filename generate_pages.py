@@ -67,12 +67,12 @@ EVENTS = [
 ]
 
 def page_event_countdown():
-    now = datetime.now()
+    now = datetime.now().date()
     upcoming = []
 
     # Convert and filter upcoming events
     for name, date_str in EVENTS:
-        event_date = datetime.strptime(date_str, "%Y-%m-%d")
+        event_date = datetime.strptime(date_str, "%Y-%m-%d").date()
         if event_date > now:
             upcoming.append((name, event_date))
 
