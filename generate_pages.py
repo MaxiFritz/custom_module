@@ -82,11 +82,12 @@ def page_event_countdown():
 
         html += f"""
         <div style="display: flex; align-items: center;">
+            <p>Upcoming events:</p>
             <div style="
                 width: 50px;height: 50px;
                 background: #fcfcfc;
                 border: 1px solid #aab8c6;border-radius: 5px;
-                display: flex;
+                display: flex;flex-direction: column;
                 align-items: center;justify-content: center;
                 font-size: 18px;font-weight: bold;
                 margin-right: 10px;
