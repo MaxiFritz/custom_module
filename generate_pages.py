@@ -83,19 +83,16 @@ def page_event_countdown():
         html += f"""
         <div style="display: flex; align-items: center;">
             <div style="
-                width: 50px;
-                height: 50px;
+                width: 50px;height: 50px;
                 background: #fcfcfc;
-                border: 1px solid #aab8c6;
-                border-radius: 5px;
+                border: 1px solid #aab8c6;border-radius: 5px;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 18px;
-                font-weight: bold;
+                align-items: center;justify-content: center;
+                font-size: 18px;font-weight: bold;
                 margin-right: 10px;
             ">
-                {delta_days}
+                <p>{delta_days}</p>
+                <p style="font-size:12px;">days</p>
             </div>
             <div style="white-space: nowrap;">
                 {name}
