@@ -75,25 +75,27 @@ def page_event_countdown():
         return "<div>No upcoming events.</div>"
 
     # Build horizontal layout
-    html = '<div style="display: flex; gap: 25px; align-items: center; justify-content:center">'
+    html = '<div style="display: flex; gap: 25px; align-items: center; justify-content:center"><p>Upcoming events:</p>'
 
     for name, date in upcoming:
         delta_days = (date - now).days
 
         html += f"""
         <div style="display: flex; align-items: center;">
-            <p>Upcoming events:</p>
             <div style="
                 width: 50px;height: 50px;
                 background: #fcfcfc;
                 border: 1px solid #aab8c6;border-radius: 5px;
-                display: flex;flex-direction: column;
+                display: flex;
                 align-items: center;justify-content: center;
                 font-size: 18px;font-weight: bold;
                 margin-right: 10px;
             ">
-                <p>{delta_days}</p>
-                <p style="font-size:12px;">days</p>
+                <p style="text-align:center;">
+                    {delta_days}<br>
+                    <span style="font-size:12px;">days</span>
+                </p>
+
             </div>
             <div style="white-space: nowrap;">
                 {name}
