@@ -3,7 +3,8 @@ EVENTS = [
     ("Rugby League WC", "2026-10-15"),
     ("YOG Dakar", "2026-10-31"),
     ("NAB", "2026-04-18"),
-    ("Summer Olympics", "2028-07-14")
+    ("Summer Olympics", "2028-07-14"),
+    ("IBC", "2026-09-11")
 ]
 zones = {
     "Los Angeles": "America/Los_Angeles",
